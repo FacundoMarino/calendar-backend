@@ -87,6 +87,8 @@ const renewToken = async (req, res = response) => {
 	const token = await generatedJWT(uid, name);
 
 	res.json({
+		uid,
+		name,
 		ok: true,
 		token,
 	});
