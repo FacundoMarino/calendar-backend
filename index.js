@@ -26,3 +26,7 @@ app.use('/api/events', require('./routes/events'));
 app.listen(process.env.PORT, () => {
 	console.log('Se levanto en el puerto 4000');
 });
+
+app.get('*', (req, res) => {
+	res.sendFile(__dirname + '/public/index.html');
+});
